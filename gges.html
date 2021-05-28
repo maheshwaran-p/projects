@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html>
+<title>94GCTians Public charitable Trust</title>
+
+<head>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script type="text/javascript">
+    function sendEmail() {
+      var x = document.getElementById('from').value;
+      var y = document.getElementById('to').value;
+      var subject = document.getElementById('subject').value;
+      var body = document.getElementById('body').value;
+
+
+      if (y == "") {
+        alert("To Address must be filled out");
+        return false;
+      }
+      if (subject == "") {
+        alert(" Subject must be filled out");
+        return false;
+      }
+      if (body == "") {
+        alert("Body must be filled out");
+        return false;
+      }
+
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "mahe.1817130@gct.ac.in",
+        Password: "gct@1234",
+        To: "Info.gges@gmail.com",
+        From: x,
+        Subject: body,
+        Body: subject,
+      })
+        .then(function (message) {
+          alert("mail sent successfully")
+        });
+    }
+
+
+  </script>
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Nunito|Patua+One|Satisfy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<style>
+  .profile-card {
+    border: 0 !important;
+  }
+
+  .profile-card-header {
+    padding: 0;
+    text-align: center;
+    background-image: url(https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg);
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.555);
+    height: 70vh;
+  }
+
+  .bg-overlay {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    background-color: rgba(0, 0, 0, 0.767);
+  }
+
+  .profile-img {
+    top: 40px;
+    border-radius: 30%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.479);
+    max-width: 150px;
+  }
+
+  .profile-card-body {
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.13);
+    border: 0 !important;
+  }
+
+  .profile-card-footer {
+    background-color: #ffffff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.13);
+    border: 0 !important;
+  }
+
+  .name,
+  .username {
+    color: #ffffff;
+  }
+
+  .name {
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .username {
+    font-weight: 300;
+    font-size: 1rem;
+    opacity: .75;
+  }
+
+  .profile-info {
+    color: #ffffff;
+    margin-top: 1.5vh;
+  }
+
+  .profile-info h3 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .profile-info-row div {
+    display: inline-block;
+  }
+
+  .profile-info-row div span {
+    display: block;
+  }
+
+  .profile-info-row div:nth-child(2) {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .profile-info-row div span:first-child {
+    font-weight: 700;
+  }
+
+  .btn-follow {
+    border-radius: 35px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* width: 20%; */
+    color: #ffffff;
+    background-color: #000000;
+    background: rgba(0, 0, 0, 0.137);
+    border: 2px solid #ffffff;
+    box-shadow: none;
+    font-size: 14px;
+  }
+
+  .btn-follow:hover,
+  .btn-follow:active {
+    color: #ffffff;
+    background-color: #000000;
+  }
+
+  .ver {
+    max-width: 20px;
+  }
+
+  .hashtag:before {
+    content: '#';
+  }
+
+  .hashtag {
+    color: #006af5;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif
+  }
+
+  body,
+  html {
+    height: 100%;
+    line-height: 1.8;
+  }
+
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://images7.alphacoders.com/932/thumb-1920-932456.jpg");
+    min-height: 100%;
+    min-height: 100%;
+  }
+
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+
+  input[type=text],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type=button] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+</style>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="#home" class="w3-bar-item w3-button w3-wide">Green and Green Engineering solutions</a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="http://gges.in" class="w3-bar-item w3-button">Home</a>
+        <a href="http://gges.in/home/about-us" class="w3-bar-item w3-button">About Us</a>
+        <a href="http://gges.in/our-clients" class="w3-bar-item w3-button">Our Clients </a>
+        <a href="http://gges.in/blog" class="w3-bar-item w3-button">Blogs</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+        onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+    style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="http://gges.in" onclick="w3_close()" class="w3-bar-item w3-button">Home</a>
+    <a href="http://gges.in/home/about-us" onclick="w3_close()" class="w3-bar-item w3-button">About Us</a>
+    <a href="http://gges.in/our-clients" onclick="w3_close()" class="w3-bar-item w3-button">Our clients</a>
+    <a href="http://gges.in/blog" onclick="w3_close()" class="w3-bar-item w3-button">Blog</a>
+
+  </nav>
+
+
+
+
+  <!-- Header with full-height image -->
+  <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-left w3-text-white" style="padding:48px">
+      <span class="w3-jumbo w3-hide-small"></span><br>
+      <span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
+      <span class="w3-large"></span>
+      <!-- <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p> -->
+    </div>
+
+  </header>
+
+  <div class="w3-container w3-light-grey" style="padding:128px 16px">
+    <div class="w3-row-padding">
+      <div class="w3-col m6">
+        <h3>We Create Quality And Product Satisafaction</h3>
+        <p> Green &amp; Green Engineering Solution has been following good quality principle. We mainly focus on high
+          customer satisfaction (CTQ) through delivering quality products, this company having dynamic young talents
+          and experience in design and production.</p>
+        <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> Read More</a></p>
+      </div>
+      <div class="w3-col m6"> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <img class="w3-image w3-round-large"
+          src="https://media.istockphoto.com/photos/quality-assurance-and-quality-control-concept-picture-id1172642339?k=6&m=1172642339&s=612x612&w=0&h=ZLD3nKZ0O6JxMlErQpyUMkciSQWmUECBnddGOVPZjeQ="
+          alt="Buildings" width="387" height="170">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Team Section -->
+  <div class="w3-container" style="padding:128px 16px" id="team">
+    <h3 class="w3-center">Our Profile</h3>
+    <p class="w3-center w3-large">Green and Green Engineering</p>
+    <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="https://futureengineer.co.uk/wp-content/uploads/2020/12/What-a-Mechanical-Design-Engineer-Does.jpg"
+            alt=" About Us" style="width:100% ; ">
+          <div class="w3-container">
+            <h3>Best Environmentally Safe products</h3>
+            <!-- <p class="w3-opacity">CEO & Founder</p> -->
+            <p> We are pleased to introduce ourselves as an Engineering company who are the manufacturer and supplier
+              of ESP internals ,Also we are providing solution to various pollution control technologies.<br><br> </p>
+            <p><button class="w3-button w3-light-grey w3-block"> <a href="https://mahesh.newsled.in"></a>
+                <i class="fa fa-th"></i> Read more</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="https://icdistanceeducation.com/wp-content/uploads/2021/03/b-tech-engineering.jpg" alt="Vision"
+            style="width:100%">
+          <div class="w3-container">
+            <h3>Perfect Design</h3>
+            <!-- <p class="w3-opacity">Art Director</p> -->
+            <p>Focus on high customer satisfaction (CTQ) through delivering quality products, this company having
+              dynamic young talents and experience in design and production <br><br><br><br><br>
+            </p>
+            <p><button class="w3-button w3-light-grey w3-block"> <a href="https://94gctianstrust.org/aboutus.html"></a>
+                <i class="fa fa-th"></i> Read More</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="https://www.nyb.com/images/applications/shutterstock_292901249.jpg" alt="Mike" style="width:100%">
+          <div class="w3-container">
+            <h3>Products use Case</h3>
+            <!-- <p class="w3-opacity">Web Designer</p> -->
+            <p>Equipment’s and Systems are useful for dust and critical material handling for complete spectrum of
+              core sector process industry such as Cement Plants, Steel Plants, Thermal Power Plants,associated with
+              different industries, etc.</p>
+            <p><button class="w3-button w3-light-grey w3-block"> <a href="https://94gctianstrust.org/aboutus.html"></a>
+                <i class="fa fa-th"></i> Read More</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="https://drealtyg.com/wp-content/uploads/2015/07/realtor-handshake.jpg" alt="Dan" style="width:100%">
+          <div class="w3-container">
+            <h3>Satisfied Clients</h3>
+
+            <p>We with our range of products have customers satisfied in our Quality <br><br><br><br></p>
+            <p><button class="w3-button w3-light-grey w3-block"> <a
+                  href="https://94gctianstrust.org/meet-our-family.html"> </a><i class="fa fa-th"></i>Read
+                More</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promo Section "Statistics"
+    <div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+      <div class="w3-quarter">
+        <span class="w3-xxlarge">10+</span>
+        <br>Clubs
+      </div>
+      <div class="w3-quarter">
+        <span class="w3-xxlarge">50+</span>
+        <br>Mentors
+      </div>
+      <div class="w3-quarter">
+        <span class="w3-xxlarge">150+</span>
+        <br>Donors
+      </div>
+      <div class="w3-quarter">
+        <span class="w3-xxlarge">40+</span>
+        <br>Scholars
+      </div>
+    </div>
+ -->
+
+
+  <!-- <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
+    </div>
+  </div>
+</div> -->
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    // Can also be used with $(document).ready()
+    $(window).load(function () {
+      $('.flexslider').flexslider({
+        animation: "slide"
+      });
+    });
+  </script>
+
+  <!-- Contact Section -->
+  <h2 class="w3-center">Our Portfolio</h2>
+  <div class="card-footer profile-card-footer pb-5">
+    <div class="container">
+      <h4 class="text-center mb-4" style="color: transparent;">Certificates</h4>
+
+
+      <div class="container">
+
+        <p style="color: transparent;"> Some of My Certificates</p>
+
+        <div data-aos="zoom-in-down" id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+
+
+          </ol>
+
+          <div class="carousel-inner">
+
+
+
+
+            <div class="item active">
+              <img src="http://gges.in/wp-content/uploads/2020/04/WhatsApp-Image-2020-02-08-at-16.04.20-300x169.jpeg"
+                style="max-height:350px; margin: auto;">
+            </div>
+
+            <div class="item">
+              <img src="http://gges.in/wp-content/uploads/2020/04/WhatsApp-Image-2020-02-08-at-16.04.13-300x169.jpeg"
+                style="max-height:350px; margin: auto;">
+            </div>
+
+
+
+            <div class="item">
+              <img src="http://gges.in/wp-content/uploads/2020/04/WhatsApp-Image-2020-02-08-at-16.04.28-169x300.jpeg"
+                style="max-height:350px; margin: auto;">
+            </div>
+            <div class="item">
+              <img src="http://gges.in/wp-content/uploads/2020/04/1-180x300.jpeg"
+                style="max-height:350px; margin: auto;">
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h2 class="w3-center">Reach Us</h2>
+    <form method="post">
+      <label for="lname">Name</label>
+      <input type="text" id="to" name="to" placeholder="Name">
+      <label for="fname">From</label>
+      <input type="text" id="from" name="from" placeholder="Example@gmail.com">
+
+
+
+
+      <label for="lname">Subject</label>
+      <input type="text" id="body" name="body" placeholder="Subject">
+
+      <label for="subject">Body</label>
+      <textarea id="subject" name="subject" placeholder="Message" style="height:200px"></textarea>
+
+      <input type="button" value="Send Email" onclick="sendEmail()" /><br>
+
+    </form>
+    <!-- Image of location/map -->
+
+  </div>
+  </div>
+
+  </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2714964903075!2d76.93382291387043!3d11.018245192157709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858dc68b80bbf%3A0x24bab8d60d2bc693!2sGovernment%20College%20of%20Technology!5e0!3m2!1sen!2sin!4v1600116444287!5m2!1sen!2sin"
+    width="100%" height="370" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+    tabindex="0"></iframe>
+  </div>
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://94gctianstrust.org/index.html" title="W3.CSS" target="_blank"
+        class="w3-hover-text-green">Copyright © 2020 | Powered by Green and Green Engineering </a></p>
+  </footer>
+
+  <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+
+
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
