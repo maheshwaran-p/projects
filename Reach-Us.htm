@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title></title>
+
+   <script src="https://smtpjs.com/v3/smtp.js"></script>
+   <script type="text/javascript">
+      function sendEmail() {
+         var x = document.getElementById('from').value;
+         var y = document.getElementById('to').value;
+         var subject = document.getElementById('subject').value;
+         var body = document.getElementById('body').value;
+         if (x == "") {
+            alert("Name must be filled out");
+            return false;
+         }
+
+         if (y == "") {
+            alert("Email must be filled out");
+            return false;
+         }
+         if (subject == "") {
+            alert(" Subject must be filled out");
+            return false;
+         }
+         if (body == "") {
+            alert("This Field must be filled out");
+            return false;
+         }
+
+         Email.send({
+            Host: "smtp.gmail.com",
+            Username: "noreplyty751@gmail.com",
+            Password: "gct@1234",
+            To: "mahe.1817130@gct.ac.in",
+            From: y,
+            Subject: subject,
+            Body: body,
+         })
+            .then(function (message) {
+               alert("mail sent successfully")
+            });
+      }
+
+
+   </script>
+</head>
+
+<body>
+   <style>
+      body {
+         font-family: Arial, Helvetica, sans-serif;
+      }
+
+      * {
+         box-sizing: border-box;
+      }
+
+      input[type=text],
+      select,
+      textarea {
+         width: 100%;
+         padding: 12px;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+         box-sizing: border-box;
+         margin-top: 6px;
+         margin-bottom: 16px;
+         resize: vertical;
+      }
+
+      input[type=button] {
+         background-color: #04AA6D;
+         color: white;
+         padding: 12px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+      }
+
+      input[type=submit]:hover {
+         background-color: #45a049;
+      }
+
+      .container {
+         border-radius: 5px;
+         background-color: #f2f2f2;
+         padding: 20px;
+      }
+   </style>
+
+   <h1 style="text-align: center;">HIP HOP </h1>
+   <div class="container">
+      <form method="post">
+         <label for="fname">Name</label>
+         <input type="text" id="from" name="from" placeholder="Name">
+
+         <label for="lname">Email</label>
+         <input type="text" id="to" name="to" placeholder="Example@gmail.com">
+
+
+         <label for="lname">Subject</label>
+         <input type="text" id="body" name="body" placeholder="Subject">
+
+         <label for="subject">Compose Your Content Here</label>
+         <textarea id="subject" name="subject" placeholder="Compose..." style="height:200px"></textarea>
+
+         <input type="button" value="Send Email" onclick="sendEmail()" /><br>
+
+      </form>
+   </div>
+</body>
+
+</html>
